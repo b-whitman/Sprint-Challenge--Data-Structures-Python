@@ -61,84 +61,84 @@ class BSTNode:
             self.right.for_each(fn)
             
 
-    # Part 2 -----------------------
+#     # Part 2 -----------------------
 
-    # Print all the values in order from low to high
-    # Hint:  Use a recursive, depth first traversal
-    def in_order_print(self):
-        if self.left != None:
-            self.left.in_order_print()
-        print(self.value)
-        if self.right != None:
-            self.right.in_order_print()
+#     # Print all the values in order from low to high
+#     # Hint:  Use a recursive, depth first traversal
+#     def in_order_print(self):
+#         if self.left != None:
+#             self.left.in_order_print()
+#         print(self.value)
+#         if self.right != None:
+#             self.right.in_order_print()
 
-    # Print the value of every node, starting with the given node,
-    # in an iterative breadth first traversal
-    def bft_print(self):
-        q = LLQueue()
-        q.enqueue(self)
+#     # Print the value of every node, starting with the given node,
+#     # in an iterative breadth first traversal
+#     def bft_print(self):
+#         q = LLQueue()
+#         q.enqueue(self)
 
-        while len(q) > 0:
-            n = q.dequeue()
-            print(n.value)
-            if n.left != None:
-                q.enqueue(n.left)
-            if n.right != None:
-                q.enqueue(n.right)
+#         while len(q) > 0:
+#             n = q.dequeue()
+#             print(n.value)
+#             if n.left != None:
+#                 q.enqueue(n.left)
+#             if n.right != None:
+#                 q.enqueue(n.right)
 
-    # Print the value of every node, starting with the given node,
-    # in an iterative depth first traversal
-    def dft_print(self):
-        s = LLStack()
-        s.push(self)
+#     # Print the value of every node, starting with the given node,
+#     # in an iterative depth first traversal
+#     def dft_print(self):
+#         s = LLStack()
+#         s.push(self)
 
-        while len(s) > 0:
-            n = s.pop()
-            print(n.value)
-            if n.left != None:
-                s.push(n.left)
-            if n.right != None:
-                s.push(n.right)
+#         while len(s) > 0:
+#             n = s.pop()
+#             print(n.value)
+#             if n.left != None:
+#                 s.push(n.left)
+#             if n.right != None:
+#                 s.push(n.right)
 
-    # Stretch Goals -------------------------
-    # Note: Research may be required
+#     # Stretch Goals -------------------------
+#     # Note: Research may be required
 
-    # Print Pre-order recursive DFT
-    def pre_order_dft(self):
-        print(self.value)
-        if self.left != None:
-            self.left.pre_order_dft()
-        if self.right != None:
-            self.right.pre_order_dft()
+#     # Print Pre-order recursive DFT
+#     def pre_order_dft(self):
+#         print(self.value)
+#         if self.left != None:
+#             self.left.pre_order_dft()
+#         if self.right != None:
+#             self.right.pre_order_dft()
 
-    # Print Post-order recursive DFT
-    def post_order_dft(self):
-        if self.left != None:
-            self.left.post_order_dft()
-        if self.right != None:
-            self.right.post_order_dft()
-        print(self.value)
+#     # Print Post-order recursive DFT
+#     def post_order_dft(self):
+#         if self.left != None:
+#             self.left.post_order_dft()
+#         if self.right != None:
+#             self.right.post_order_dft()
+#         print(self.value)
 
-"""
-This code is necessary for testing the `print` methods
-"""
-bst = BSTNode(1)
+# """
+# This code is necessary for testing the `print` methods
+# """
+# bst = BSTNode(1)
 
-bst.insert(8)
-bst.insert(5)
-bst.insert(7)
-bst.insert(6)
-bst.insert(3)
-bst.insert(4)
-bst.insert(2)
+# bst.insert(8)
+# bst.insert(5)
+# bst.insert(7)
+# bst.insert(6)
+# bst.insert(3)
+# bst.insert(4)
+# bst.insert(2)
 
-bst.bft_print()
-bst.dft_print()
+# bst.bft_print()
+# bst.dft_print()
 
-print("elegant methods")
-print("pre order")
-bst.pre_order_dft()
-print("in order")
-bst.in_order_print()
-print("post order")
-bst.post_order_dft()  
+# print("elegant methods")
+# print("pre order")
+# bst.pre_order_dft()
+# print("in order")
+# bst.in_order_print()
+# print("post order")
+# bst.post_order_dft()  
